@@ -9,8 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var numberOnScreen:Double = 0;
-    var previousNumber:Double = 0;
+    var numberOnScreen:Int64 = 0;
+    var previousNumber:Int64 = 0;
     var performMath:Bool = false;
     var operation = 0;
     
@@ -20,11 +20,11 @@ class ViewController: UIViewController {
     {
         if performMath == true {
             label.text = String(sender.tag-1)
-            numberOnScreen = Double(label.text!)!
+            numberOnScreen = Int64(label.text!)!
             performMath = false;
         } else {
             label.text = label.text! + String(sender.tag-1)
-            numberOnScreen = Double(label.text!)!
+            numberOnScreen = Int64(label.text!)!
         }
         
     }
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     @IBAction func buttons(_ sender: UIButton) {
         
         if(label.text != "" && (sender.tag == 14 || sender.tag == 15 || sender.tag == 16 || sender.tag == 17)){
-            previousNumber = Double(label.text!)!
+            previousNumber = Int64(label.text!)!
             if sender.tag == 14 {
                 label.text = "/";
                 
